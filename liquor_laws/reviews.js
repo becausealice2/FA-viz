@@ -1,11 +1,34 @@
+var config = {
+// Configure map settings
+map_location: gist.githubusercontent.com/d3noob/5189284/raw/7c4bbf3f44d2aeb4d01ca6365b7978b09fdc8766/world-110m2.json
+reviews_location: gist.githubusercontent.com/becausealice2/663243e3982136e391d53fb4150fecb1/raw/4cb35987a8a2a113ddd7809479850a4d88c5870f/restaurant_reviews.csv
+reviews_latitude_column: latitude
+reviews_longitude_column: longitude
+div_id: reviews_location_map
+div_width: 960
+div_height: 500
+margin_top: 0
+margin_bottom: 0
+margin_left: 0
+margin_right: 0
+map_scale: 130
+map_shift_horizontal: 2
+map_shift_vertical: 1.5
+country_fill_color: #ccc
+country_fill_color: #fff
+country_border_width: 0.5
+location_marker_radius: 3
+location_marker_color: blue
+}
+
 /*** Code taken from Micah Stubbs on bl.ocks.org and customized ***/
 /*** bl.ocks.org/micahstubbs/8e15870eb432a21f0bc4d3d527b2d14f ***/
 
 // Config.txt file location
-var config_txt = "./config.txt";
+// var config_txt = "./config.txt";
 
 // Initialize variables
-var config     = {},
+var // config     = {},
     topology   = "",
     reviews    = "",
     width      = 0,
@@ -17,20 +40,19 @@ var config     = {},
 /*** Wrap everything in functions because async ***/
 
 // Convert input from config.txt file to JSON and apply to config object
-function create_config(file){
-  lines = file.toString().split("\n");
-  lines.forEach(function config_json(line){
-  	if (line != "") {
-	    line = line.split(":")
-	    var key   = line[0].trim().toLowerCase();
-	    var value = line[1].trim();
-	  
-	    config[key] = value;
-	}
-  });
-  console.log(config);
-  set_vars(config);
-}
+// function create_config(file){
+//   lines = file.toString().split("\n");
+//   lines.forEach(function config_json(line){
+//   	if (line != "") {
+// 	    line = line.split(":")
+// 	    var key   = line[0].trim().toLowerCase();
+// 	    var value = line[1].trim();
+//	  
+// 	    config[key] = value;
+// 	}
+//   });
+//   set_vars(config);
+// }
 
 // Assign values to variables using config object
 function set_vars(config){
