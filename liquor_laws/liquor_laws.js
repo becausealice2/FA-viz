@@ -15,7 +15,7 @@ var config = {
 "map_shift_horizontal": 2,
 "map_shift_vertical": 1.5,
 "country_fill_color": "#ccc",
-"country_fill_color": "#fff",
+"country_border_color": "#fff",
 "country_border_width": 0.5,
 "location_marker_radius": 3,
 "location_marker_color": "blue",
@@ -129,4 +129,4 @@ function render(config, topology, reviews){
 }
 
 // Load config file and start the domino chain of functions
-d3.text(config_txt, create_config);
+set_vars(config);
