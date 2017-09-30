@@ -103,10 +103,7 @@ function create_config(file){
 
 function redraw(config){
 	// Load world map topojson
-	/*******************************************
-	 *remove "https://"+ when using local file*
-	*******************************************/
-	d3.json(config.map_location, function render_map(topology){
+	d3.json("https://"+config.map_location, function render_map(topology){
 		
 		// Use world map's bounding box array to calculate the map's aspect ratio
 		var geo_objects      = topology.objects.countries,
@@ -150,10 +147,7 @@ function redraw(config){
 		var topology = topojson.feature(topology, geo_objects);
 
 		// Load reviews dataset
-	    	/*******************************************
-			 *remove "https://"+ when using local file*
-			*******************************************/
-			d3.csv(config.reviews_location, function render_location_markers(reviews){
+	    d3.csv("https://"+config.reviews_location, function render_location_markers(reviews){
 
 			// Group together country shape paths and enter data
 		    svg.append("g")
@@ -189,4 +183,4 @@ function redraw(config){
 
 
 // Load config.txt and get the ball rolling
-d3.text("./config.txt", create_config);
+d3.text("https://rawgit.com/becausealice2/FA-viz/master/liquor_laws/config.txt", create_config);

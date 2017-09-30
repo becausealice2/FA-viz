@@ -1,5 +1,5 @@
-MAP_LOCATION: ./world_50m.json
-REVIEWS_LOCATION: ./restaurant_reviews.csv
+MAP_LOCATION: cdn.rawgit.com/becausealice2/FA-viz/master/liquor_laws/world_50m.json
+REVIEWS_LOCATION: cdn.rawgit.com/becausealice2/FA-viz/master/liquor_laws/world_50m.json
 REVIEWS_LATITUDE_COLUMN: latitude
 REVIEWS_LONGITUDE_COLUMN: longitude
 DIV_ID: reviews_location_map
