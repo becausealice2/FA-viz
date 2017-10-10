@@ -1,3 +1,7 @@
+// Code by Patty Alice Jiang
+// https://www.github.com/becausealice2/FA-viz/liquor_laws/tree/master/liquor_laws
+
+
 // Polyfill for EventTarget.addEventListener()
 (function() {
   if (!Event.prototype.preventDefault) {
@@ -95,7 +99,7 @@ function create_config(file){
 	    var value = line[1].trim();
 	  
 	    config[key] = value;
-	} // Close if (line != "") {...
+		} // Close if (line != "") {...
   }); // Close lines.forEach(function config_json(line){...
 
   redraw(config);
@@ -115,11 +119,11 @@ function redraw(config){
 	      height  = width / map_aspect_ratio,
 	  		// Set margins around rendered map
 	  		margins = {
-	  				   "top": parseFloat(config.margin_top),
-	  				   "bottom": parseFloat(config.margin_bottom),
-	  				   "left": parseFloat(config.margin_left),
-	  				   "right": parseFloat(config.margin_right)
-	  				  };
+			  				   "top": parseFloat(config.margin_top),
+			  				   "bottom": parseFloat(config.margin_bottom),
+			  				   "left": parseFloat(config.margin_left),
+			  				   "right": parseFloat(config.margin_right)
+			  				  };
 
 		// Select target element and attach <svg> and <g> elements
 		var svg = d3.select("#"+config.div_id)
@@ -133,11 +137,11 @@ function redraw(config){
 	                .attr('class', config.div_id);
 
 		// Projections transform spherical polygonal geometry to planar polygonal geometry
-		var projection = d3.geoEquirectangular()
-						   // Scale map
-						   .scale(config.map_scale)
-			               // Center the map's center point
-			               .translate([(width / config.map_shift_horizontal), (height / config.map_shift_vertical)]);
+		var projection = d3.geoMercator()
+										   // Scale map
+										   .scale(config.map_scale)
+				               // Center the map's center point
+				               .translate([(width / config.map_shift_horizontal), (height / config.map_shift_vertical)]);
 
 		// Geo-paths take a GeoJSON geometry/feature object and generate an SVG path data string or render the path to a Canvas
 		var path = d3.geoPath()
@@ -183,4 +187,4 @@ function redraw(config){
 
 
 // Load config.txt and get the ball rolling
-d3.text("https://rawgit.com/becausealice2/FA-viz/master/liquor_laws/config.txt", create_config);
+d3.text("https://cdn.rawgit.com/becausealice2/FA-viz/master/liquor_laws/config.txt", create_config);
