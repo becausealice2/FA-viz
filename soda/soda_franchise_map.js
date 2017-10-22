@@ -187,4 +187,4 @@ function redraw(config){
 
 
 // Load config.txt and get the ball rolling
-d3.text("./config.txt", create_config);
+d3.text("https://raw.githubusercontent.com/becausealice2/FA-viz/master/soda/config.txt", create_config);
