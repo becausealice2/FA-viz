@@ -153,7 +153,7 @@ function redraw(config){
 		// Load reviews dataset
 	    d3.csv("https://"+config.reviews_location, function render_location_markers(reviews){
 
-			// Group together country shape paths and enter data
+        // Group together country shape paths and enter data
 		    svg.append("g")
 		         .attr("class", config.div_id+"_countries")
 		       .selectAll("path")
@@ -187,4 +187,4 @@ function redraw(config){
 
 
 // Load config.txt and get the ball rolling
-d3.text("https://raw.githubusercontent.com/becausealice2/FA-viz/master/soda/config.txt", create_config);
+d3.text("https://rawgit.com/becausealice2/FA-viz/master/soda/config.txt", create_config);

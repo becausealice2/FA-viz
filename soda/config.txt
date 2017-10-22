@@ -1,5 +1,5 @@
-MAP_LOCATION: raw.githubusercontent.com/becausealice2/FA-viz/master/soda/world_50m.json
-REVIEWS_LOCATION: raw.githubusercontent.com/becausealice2/FA-viz/master/soda/soda_data.csv
+MAP_LOCATION: rawgit.com/becausealice2/FA-viz/master/soda/world_50m.json
+REVIEWS_LOCATION: rawgit.githubusercontent.com/becausealice2/FA-viz/master/soda/soda_data.csv
 REVIEWS_LATITUDE_COLUMN: Latitude
 REVIEWS_LONGITUDE_COLUMN: Longitude
 DIV_ID: soda_franchise_location_map
