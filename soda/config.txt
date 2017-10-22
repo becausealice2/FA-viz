@@ -1,4 +1,4 @@
-MAP_LOCATION: rawgit.com/becausealice2/FA-viz/master/soda/world_50m.json
+MAP_LOCATION: rawgit.com/becausealice2/FA-viz/master/soda/us_20m.json
 REVIEWS_LOCATION: rawgit.com/becausealice2/FA-viz/master/soda/soda_data.csv
 REVIEWS_LATITUDE_COLUMN: Latitude
 REVIEWS_LONGITUDE_COLUMN: Longitude
