@@ -109,6 +109,7 @@ function redraw(config){
 	// Load world map topojson
 	d3.json("https://"+config.map_location, function render_map(topology){
 		
+    console.log(topology);
 		// Use world map's bounding box array to calculate the map's aspect ratio
 		var geo_objects      = topology.objects.countries,
 	      bbox             = geo_objects.bbox,
