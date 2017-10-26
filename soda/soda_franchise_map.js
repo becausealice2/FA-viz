@@ -109,10 +109,9 @@ function redraw(config){
 	// Load world map topojson
 	d3.json("https://"+config.map_location, function render_map(topology){
 		
-    console.log(topology);
-		// Use world map's bounding box array to calculate the map's aspect ratio
-		var geo_objects      = topology.objects.countries,
-	      bbox             = geo_objects.bbox,
+    // Use world map's bounding box array to calculate the map's aspect ratio
+		var geo_objects      = topology.objects.states,
+	      bbox             = topology.bbox,
 	      map_aspect_ratio = (bbox[2]-bbox[0]) / (bbox[3]-bbox[1]);
 
 		// Get target element's width and use aspect ratio to set height
@@ -172,14 +171,14 @@ function redraw(config){
 	        	lat = config.reviews_latitude_column;
 
 			// Render and style circle location marker for each observation in reviews dataset
-			svg.selectAll("circle")
-			   .data(reviews)
-			   .enter()
-			   .append("circle")
-			     .attr("cx", function(d) { return projection([d[lon], d[lat]])[0]; })
-			     .attr("cy", function(d) { return projection([d[lon], d[lat]])[1]; })
-			     .attr("r", parseFloat(config.location_marker_radius))
-			     .style("fill", config.location_marker_color);
+			// svg.selectAll("circle")
+			//    .data(reviews)
+			//    .enter()
+			//    .append("circle")
+			//      .attr("cx", function(d) { return projection([d[lon], d[lat]])[0]; })
+			//      .attr("cy", function(d) { return projection([d[lon], d[lat]])[1]; })
+			//      .attr("r", parseFloat(config.location_marker_radius))
+			//      .style("fill", config.location_marker_color);
 
 	    }); // Close d3.csv(reviews_url, function render_location_markers(reviews){...
 
