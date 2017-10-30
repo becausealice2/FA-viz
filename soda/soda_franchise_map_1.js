@@ -6,7 +6,8 @@ var config  = {},
 config.div_id = "soda_franchise_map",
 config.map_shift_horizontal = 2,
 config.map_shift_vertical = 2,
-config.states = ["Arizona", "Idaho", "Nevada", "Utah"];
+config.states = ["Arizona", "Idaho", "Nevada", "Utah"],
+config.title = "Number of shops open in ";
 
 d3.queue()
 	.defer(d3.json, "https://gist.githubusercontent.com/michellechandra/0b2ce4923dc9b5809922/raw/a476b9098ba0244718b496697c5b350460d32f99/us-states.json")
@@ -47,6 +48,8 @@ function render_map(error, result_data){
 	// Select target element
   var svg = d3.select("#"+config.div_id)
 
+  var title = svg.insert("h2", ":first-child").text(config.title +"2010");
+
   // Slider
 	svg.append("input")
 				.attr("type", "range")
@@ -79,7 +82,7 @@ function render_map(error, result_data){
 			 .append("path")
 				 .attr("d", path)
 				 .style("fill", "#FFF")
-				 .style("stroke", "#000")
+				 .style("stroke", "#333")
 				 .style("stroke-width", "1px");
 
 	// Group together location markers
@@ -88,17 +91,6 @@ function render_map(error, result_data){
 	// Variables for reuse
 	var lon = "Longitude",
 			lat = "Latitude";
-
-	// function location_color(location){
-	// 	switch (location["Company"]){
-	// 		case "Swig 'n Sweets":
-	// 			return "yellow";
-	// 		case 'FiiZ':
-	// 			return "blue";
-	// 		case 'Sodalicious':
-	// 			return "red";
-	// 	}
-	// }
 
 	function update(){
 
@@ -120,7 +112,9 @@ function render_map(error, result_data){
 						 .attr("r", 2)
 						 .style("fill", "steelblue");
 
-		exit.remove();			
+		exit.remove();
+
+		title.text(config.title + slider_year)
 	}
 
 	update();
