@@ -22,7 +22,7 @@ function render_map(error, result_data){
 
 	// Get target element's width and use aspect ratio to set height
 	width  = document.getElementById(config.div_id).clientWidth,
-	height = width * (1/2),
+	height = width * (2/3),
 	// Set margins around rendered map
 	margins.top    = 0,
 	margins.bottom = 0,
