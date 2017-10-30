@@ -7,7 +7,7 @@ config.div_id = "soda_franchise_map",
 config.map_shift_horizontal = 2,
 config.map_shift_vertical = 2,
 config.states = ["Arizona", "Idaho", "Nevada", "Utah"],
-config.title = "Number of shops open in ";
+config.title = "Soda fountain shops open in ";
 
 d3.queue()
 	.defer(d3.json, "https://gist.githubusercontent.com/michellechandra/0b2ce4923dc9b5809922/raw/a476b9098ba0244718b496697c5b350460d32f99/us-states.json")
@@ -24,7 +24,7 @@ function render_map(error, result_data){
 
 	// Get target element's width and use aspect ratio to set height
 	width  = document.getElementById(config.div_id).clientWidth,
-	height = width * (2/3),
+	height = width * (1/3),
 	// Set margins around rendered map
 	margins.top    = 0,
 	margins.bottom = 0,
@@ -109,7 +109,8 @@ function render_map(error, result_data){
 			 			 .attr("class", config.div_id+"_location_markers")
 						 .attr("cx", function(d) { return projection([d[lon], d[lat]])[0]; })
 						 .attr("cy", function(d) { return projection([d[lon], d[lat]])[1]; })
-						 .attr("r", 2)
+						 .attr("r", 3.5)
+						 .attr("opacity", (1/3))
 						 .style("fill", "steelblue");
 
 		exit.remove();
