@@ -31,7 +31,7 @@ function render_map(error, result_data){
 	margins.left   = 0,
 	margins.right  = 0;
 
-	var projection = d3.geoAlbersUsa().translate([width/2.75, height/2.75]);
+	var projection = d3.geoAlbersUsa().translate([width/2, height/2]);
 	// Geo-paths take a GeoJSON geometry/feature object and generate an SVG path data string or render the path to a Canvas
 	var path = d3.geoPath().projection(projection);
 
