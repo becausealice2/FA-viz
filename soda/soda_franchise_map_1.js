@@ -4,8 +4,6 @@ var config  = {},
 		margins = {};
 
 config.div_id = "soda_franchise_map",
-config.map_shift_horizontal = 2,
-config.map_shift_vertical = 2,
 config.states = ["Arizona", "Idaho", "Nevada", "Utah"],
 config.title = "Soda fountain shops open in ";
 
@@ -24,7 +22,7 @@ function render_map(error, result_data){
 
 	// Get target element's width and use aspect ratio to set height
 	width  = document.getElementById(config.div_id).clientWidth,
-	height = width * (1/3),
+	height = width * (1/2),
 	// Set margins around rendered map
 	margins.top    = 0,
 	margins.bottom = 0,
