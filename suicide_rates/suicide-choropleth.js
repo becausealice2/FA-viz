@@ -55,6 +55,6 @@ function ready(error, utah, suicide_rates){
 } // Close function ready(error, utah, suicide_rates){...
 
 d3.queue()
-	.defer(d3.json, "./utah-counties.json")
-	.defer(d3.csv, "./suicide-by-health-district.csv")
+	.defer(d3.json, "https://rawgit.com/becausealice2/FA-viz/master/suicide_rates/utah-counties.json")
+	.defer(d3.csv, "https://rawgit.com/becausealice2/FA-viz/master/suicide_rates/suicide-by-health-district.csv")
 	.await(ready);
