@@ -1,0 +1,32 @@
+health_district,county,rate_per_100k,note
+Bear River,"Box Elder County, UT",18.2,0
+Bear River,"Cache County, UT",18.2,0
+Bear River,"Rich County, UT",18.2,0
+Central Utah,"Juab County, UT",35.6,0
+Central Utah,"Millard County, UT",35.6,0
+Central Utah,"Piute County, UT",35.6,0
+Central Utah,"Sevier County, UT",35.6,0
+Central Utah,"Wayne County, UT",35.6,0
+Central Utah,"Sanpete County, UT",35.6,0
+Davis County,"Davis County, UT",17.3,0
+Salt Lake County,"Salt Lake County, UT",25.4,0
+San Juan County,"San Juan County, UT",13.1,1
+Southeast,"Carbon County, UT",46.4,0
+Southeast,"Emery County, UT",46.4,0
+Southeast,"Grand County, UT",46.4,0
+Southwest,"Garfield County, UT",24.9,0
+Southwest,"Iron County, UT",24.9,0
+Southwest,"Kane County, UT",24.9,0
+Southwest,"Washington County, UT",24.9,0
+Southwest,"Beaver County, UT",24.9,0
+Summit County,"Summit County, UT",20.7,0
+Tooele County,"Tooele County, UT",30.5,0
+TriCounty,"Daggett County, UT",38.6,0
+TriCounty,"Duchesne County, UT",38.6,0
+TriCounty,"Uintah County, UT",38.6,0
+Utah County,"Utah County, UT",18.9,0
+Wasatch County,"Wasatch County, UT",19,0
+Weber-Morgan,"Weber County, UT",27.6,0
+Weber-Morgan,"Morgan County, UT",27.6,0
+Utah State,,23.8,0
+U.S.,,15.3,0
