@@ -16,13 +16,14 @@ function ready(error, utah, suicide_rates){
 	var min = d3.min(suicide_rates, function(d){ return +d.rate_per_100k; }),
 			max = d3.max(suicide_rates, function(d){ return +d.rate_per_100k; });
 
-	var color = d3.scaleThreshold()
+	var color = d3.scaleQuantize()
 								.domain([min, max])
 								.range(d3.schemeReds[9]);
 
 	function color_fill(data){
 		var element = suicide_rates.find(function(element){ return element.county == data.properties.name; });
 		data.rate = element.rate_per_100k;
+		console.log(data.rate);
 		return color(data.rate);
 	}
 
