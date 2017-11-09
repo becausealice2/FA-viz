@@ -1,7 +1,7 @@
 // Get target element's width and use aspect ratio to set height
 var div_id  = "choropleth",
 		width   = document.getElementById(div_id).clientWidth,
-		height  = width*0.7,
+		height  = width*0.75,
 		center  = [-113.3010264, 39.7287941],
 		// Set margins around rendered map
 		margins = {"top": 0, "bottom": 0, "left": 0, "right": 0};
