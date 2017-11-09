@@ -6,7 +6,7 @@ var div_id  = "choropleth",
 		// Set margins around rendered map
 		margins = {"top": 0, "bottom": 0, "left": 0, "right": 0};
 
-var projection = d3.geoMercator().scale(5000).center(center).translate([width/2.8, height/2.15]);
+var projection = d3.geoMercator().scale(5000).center(center).translate([width/2.77, height/2.15]);
 // Geo-paths take a GeoJSON geometry/feature object and generate an SVG path data string or render the path to a Canvas
 var path = d3.geoPath().projection(projection);
 
