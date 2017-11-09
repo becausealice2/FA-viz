@@ -1,12 +1,12 @@
 // Get target element's width and use aspect ratio to set height
 var div_id  = "choropleth",
 		width   = document.getElementById(div_id).clientWidth,
-		height  = width*0.55,
+		height  = width*0.75,
 		center  = [-113.3010264, 39.7287941],
 		// Set margins around rendered map
 		margins = {"top": 0, "bottom": 0, "left": 0, "right": 0};
 
-var projection = d3.geoMercator().scale(5000).center(center).translate([width/2.75, height/2.15]);
+var projection = d3.geoMercator().scale(5000).center(center).translate([width/2.8, height/2.15]);
 // Geo-paths take a GeoJSON geometry/feature object and generate an SVG path data string or render the path to a Canvas
 var path = d3.geoPath().projection(projection);
 
@@ -89,7 +89,7 @@ function ready(error, utah, suicide_rates){
 		 .html("*For more information on local health districts, visit Utah's <a href=\"https://ibis.health.utah.gov/about/LocalHealth.html\">Public Health Indicator Based Information System</a>")
 		 .style("color", "#555")
 		 .style("text-align", "center")
-		 .style("font-size", "10px");
+		 .style("font-size", "12px");
 
 } // Close function ready(error, utah, suicide_rates){...
 
