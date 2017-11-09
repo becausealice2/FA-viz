@@ -1,12 +1,12 @@
 // Get target element's width and use aspect ratio to set height
 var div_id  = "choropleth",
 		width   = document.getElementById(div_id).clientWidth,
-		height  = width*0.6,
+		height  = width*0.65,
 		center  = [-113.3010264, 39.7287941],
 		// Set margins around rendered map
 		margins = {"top": 0, "bottom": 0, "left": 0, "right": 0};
 
-var projection = d3.geoMercator().scale(4750).center(center).translate([width/2.77, height/2.5]);
+var projection = d3.geoMercator().scale(4500).center(center).translate([width/3, height/2.4]);
 // Geo-paths take a GeoJSON geometry/feature object and generate an SVG path data string or render the path to a Canvas
 var path = d3.geoPath().projection(projection);
 
@@ -17,11 +17,11 @@ function ready(error, utah, suicide_rates){
 			max = d3.max(suicide_rates, function(d){ return +d.rate_per_100k; });
 
 	var x = d3.scaleLinear()
-						.domain([min, max])
+						.domain([0, max])
 						.rangeRound([600, 860]);
 
 	var color = d3.scaleQuantize()
-								.domain([min, max])
+								.domain([0, max])
 								.range(d3.schemeReds[9]);
 
 	function color_fill(data){
@@ -47,7 +47,7 @@ function ready(error, utah, suicide_rates){
 
 	var key = svg.append("g")
 							.attr("class", "key")
-							.attr("transform", "translate(0,5)");
+							.attr("transform", "translate(-125,25)");
 
 	key.selectAll("rect")
 		.data(color.range().map(function(d) {
@@ -63,12 +63,24 @@ function ready(error, utah, suicide_rates){
 			.attr("width", function(d) { return x(d[1]) - x(d[0]); })
 			.attr("fill", function(d) { return color(d[0]); });
 
+
+	key.append("text")
+			.attr("class", "caption")
+			.attr("x", x.range()[0])
+			.attr("y", -6)
+			.attr("fill", "#000")
+			.attr("text-anchor", "start")
+			.attr("font-weight", "bold")
+			.text("Rate per 100,000 population, age 10+");
+
 	key.call(d3.axisBottom(x)
 						.tickSize(13)
 						.tickFormat(function(x, i) { return Math.floor(x) + "%"; })
-						.tickValues([min, (min+((max-min)/2)), max]))
+						.tickValues([0, (max*0.25), (max*0.5), (max*0.75), max]))
 	 .select(".domain")
 		.remove();
+
+	key.selectAll(".tick line").attr("stroke", "none");
 
 	// Group together country shape paths and enter data
 	var map = svg.append("g")
