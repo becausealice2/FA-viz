@@ -13,8 +13,7 @@ var path = d3.geoPath().projection(projection);
 function ready(error, utah, suicide_rates){
 	if(error) console.error(error);
 
-	var min = d3.min(suicide_rates, function(d){ return +d.rate_per_100k; }),
-			max = d3.max(suicide_rates, function(d){ return +d.rate_per_100k; });
+	var max = d3.max(suicide_rates, function(d){ return +d.rate_per_100k; });
 
 	var x = d3.scaleLinear()
 						.domain([0, max])
