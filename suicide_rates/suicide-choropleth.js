@@ -44,7 +44,7 @@ function ready(error, utah, suicide_rates){
 
 			var g = svg.append("g")
 		.attr("class", "key")
-		.attr("transform", "translate(-150,40)");
+		.attr("transform", "translate(-150,0)");
 
 	g.selectAll("rect")
 		.data(color.range().map(function(d) {
