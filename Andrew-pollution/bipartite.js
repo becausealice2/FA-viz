@@ -42,7 +42,7 @@ var data=[['Rio Tinto America', 'Lead', 164494268.0],
 var colors = {"Autoliv":"#3366CC", "Berkshire Hathaway":"#DC3912", "Chevron Corp":"#FF9900", "Clean Harbors":"#109618", "Deseret Power":"#990099", "Energysolutions":"#0099C6", "Hexcel Corp":"#3366CC", "Intermountain Power":"#DC3912", "Materion":"#FF9900", "Mcwane":"#109618", "Nucor Corp":"#990099", "Orbital Atk":"#0099C6", "Rio Tinto America":"#3366CC", "The Renco Group":"#DC3912", "Westinghouse Electric":"#FF9900"};
 var svg = d3.select("#bipartite").append("svg").attr("width", 780).attr("height", 525);
 
-d3.select("#bipartite").insert("h4", ":first-child").text("Pollutants Released by Company (>100,000 pounds)").style("text-align", "center");
+d3.select("#bipartite").insert("h4", ":first-child").text("Pollutants Released by Company in Pounds (>100,000 pounds)").style("text-align", "center");
 
 var g = svg.append("g").attr("transform","translate(250,5)");
 
