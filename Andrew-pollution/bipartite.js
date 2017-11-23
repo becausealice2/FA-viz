@@ -66,21 +66,21 @@ g.selectAll(".mainBars").append("text").attr("class","label")
 	.attr("y",d=>+6)
 	.text(d=>d.key)
 	.attr("text-anchor",d=>(d.part=="primary"? "end": "start"))
-	.attr("font-size", 12);
+	.attr("font-size", 13);
 	
 g.selectAll(".mainBars").append("text").attr("class","perc")
 	.attr("x",d=>(d.part=="primary"? -65: 65))
 	.attr("y",d=>+6)
 	.text(function(d){ return d3.format("0.0%")(d.percent)})
 	.attr("text-anchor",d=>(d.part=="primary"? "end": "start"))
-	.attr("font-size", 12);
+	.attr("font-size", 13);
   
 g.selectAll(".mainBars").append("text").attr("class","total")
 	.attr("x",d=>(d.part=="primary"? -25: 25))
 	.attr("y",d=>+6)
 	.text(d=>Math.round(d.value/1000000)+"M")
 	.attr("text-anchor",d=>(d.part=="primary"? "end": "start"))
-	.attr("font-size", 12);
+	.attr("font-size", 13);
 
 function mouseover(d){
 	bp.mouseover(d);
