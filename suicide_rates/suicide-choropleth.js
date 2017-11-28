@@ -1,16 +1,16 @@
 // Get target element's width and use aspect ratio to set height
 var div_id  = "choropleth",
 		width   = document.getElementById(div_id).clientWidth,
-		height  = width*0.65,
+		height  = width*0.67,
 		center  = [-113.3010264, 39.7287941],
 		// Set margins around rendered map
 		margins = {"top": 0, "bottom": 0, "left": 0, "right": 0};
 
-var projection = d3.geoMercator().scale(4500).center(center).translate([width/3, height/2.4]);
+var projection = d3.geoMercator().scale(4500).center(center).translate([width/3, height/2.2]);
 // Geo-paths take a GeoJSON geometry/feature object and generate an SVG path data string or render the path to a Canvas
 var path = d3.geoPath().projection(projection);
 
-function ready(error, utah, suicide_rates){
+function ready(error, utah, districts, suicide_rates){
 	if(error) console.error(error);
 
 	var max = d3.max(suicide_rates, function(d){ return +d.rate_per_100k; });
@@ -96,6 +96,18 @@ function ready(error, utah, suicide_rates){
 		 .append("title")
 			 .text(function(d) { return d.rate + "%"; });
 
+	svg.append("g")
+		 	.attr("class", div_id + "_border")
+		 .selectAll("path")
+		 .data(districts.features)
+  		.enter()
+  		.append("path")
+			 .attr("d", path)
+			 .attr("stroke", "#fff")
+			 .attr("fill", "none")
+			 .attr("stroke-width", "1px")
+   		 .attr("stroke", "black")
+
 	div.insert("p")
 		 .html("*For more information on local health districts, visit Utah's <a href=\"https://ibis.health.utah.gov/about/LocalHealth.html\">Public Health Indicator Based Information System</a>")
 		 .style("color", "#555")
@@ -106,5 +118,6 @@ function ready(error, utah, suicide_rates){
 
 d3.queue()
 	.defer(d3.json, "https://rawgit.com/becausealice2/FA-viz/master/suicide_rates/utah-counties.json")
+	.defer(d3.json, "https://rawgit.com/becausealice2/FA-viz/master/suicide_rates/utah-districts.geojson")
 	.defer(d3.csv, "https://rawgit.com/becausealice2/FA-viz/master/suicide_rates/suicide-by-health-district.csv")
 	.await(ready);
