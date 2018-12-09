@@ -9,7 +9,7 @@ config.title = "Soda fountain shops open in ";
 
 d3.queue()
 	.defer(d3.json, "https://gist.githubusercontent.com/michellechandra/0b2ce4923dc9b5809922/raw/a476b9098ba0244718b496697c5b350460d32f99/us-states.json")
-	.defer(d3.csv, "https://rawgit.com/becausealice2/FA-viz/master/soda/soda_data.csv")
+	.defer(d3.csv, "https://cdn.jsdelivr.net/gh/becausealice2/FA-viz/soda/soda_data.csv")
 	.awaitAll(render_map);
 
 
